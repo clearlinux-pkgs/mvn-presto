@@ -4,13 +4,14 @@
 #
 Name     : mvn-presto
 Version  : 0.224
-Release  : 1
+Release  : 2
 URL      : https://github.com/prestodb/presto/archive/0.224.tar.gz
 Source0  : https://github.com/prestodb/presto/archive/0.224.tar.gz
 Source1  : https://repo1.maven.org/maven2/com/facebook/presto/hadoop/hadoop-apache2/2.7.3-1/hadoop-apache2-2.7.3-1.jar
 Source2  : https://repo1.maven.org/maven2/com/facebook/presto/hadoop/hadoop-apache2/2.7.3-1/hadoop-apache2-2.7.3-1.pom
 Source3  : https://repo1.maven.org/maven2/com/facebook/presto/presto-hive/0.187/presto-hive-0.187.jar
 Source4  : https://repo1.maven.org/maven2/com/facebook/presto/presto-hive/0.187/presto-hive-0.187.pom
+Source5  : https://repo1.maven.org/maven2/com/facebook/presto/presto-root/0.187/presto-root-0.187.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause GPL-2.0 MIT
@@ -61,6 +62,9 @@ cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/facebook/presto/pre
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/facebook/presto/presto-hive/0.187
 cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/com/facebook/presto/presto-hive/0.187/presto-hive-0.187.pom
 
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/facebook/presto/presto-root/0.187
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/com/facebook/presto/presto-root/0.187/presto-root-0.187.pom
+
 
 %files
 %defattr(-,root,root,-)
@@ -71,6 +75,7 @@ cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/com/facebook/presto/pre
 /usr/share/java/.m2/repository/com/facebook/presto/hadoop/hadoop-apache2/2.7.3-1/hadoop-apache2-2.7.3-1.pom
 /usr/share/java/.m2/repository/com/facebook/presto/presto-hive/0.187/presto-hive-0.187.jar
 /usr/share/java/.m2/repository/com/facebook/presto/presto-hive/0.187/presto-hive-0.187.pom
+/usr/share/java/.m2/repository/com/facebook/presto/presto-root/0.187/presto-root-0.187.pom
 
 %files license
 %defattr(0644,root,root,0755)
